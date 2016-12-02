@@ -1,5 +1,5 @@
 from scapy.all import *
-from scapy_ssl_tls.ssl_tls import *
+#from scapy.layers.ssl_tls import *
 import socket
 
 fichPCAP = "trace7.pcap"
@@ -10,8 +10,7 @@ def find():
     file = open("test1111.txt", "w")
     for packet in rdpcap(fichPCAP):
         if packet.haslayer(SSL):
-            packet.show()
-            #print(str(packet[3][1]))
+            print(str(packet[3][1]))
             #directory = str(packet[IP].src)
             #if not os.path.exists(directory):
              #   os.makedirs(directory)
